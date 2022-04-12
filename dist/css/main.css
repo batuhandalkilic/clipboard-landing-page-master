@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  background-position: center;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+}
+
+footer .footer-grid .flex-card, section .article-center-img, section .article-2 .text, section .article-just-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer .contact .social-media-icon, section .article-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grayish-blue {
+  color: hsl(201deg, 11%, 66%);
+  margin-top: 1rem;
+}
+
+.clipboard {
+  background: none;
+}
+
+.clipboard {
+  margin: 5rem 0;
+}
+.clipboard::after {
+  display: none;
+}
+
+.header, .clipboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header p, .clipboard p {
+  width: 70%;
+}
+.header::after, .clipboard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assest/images/bg-header-desktop.png") no-repeat center center/cover;
+  z-index: -1;
+}
+.header > *, .clipboard > * {
+  margin-top: 2rem;
+  text-align: center;
+}
+.header-buttons, .clipboard-buttons {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+.header-buttons .btn, .clipboard-buttons .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px inse;
+  border-radius: 20px;
+  color: rgb(251, 251, 251);
+  padding: 10px 25px;
+}
+.header-buttons .btn--cyan, .clipboard-buttons .btn--cyan {
+  background-color: hsl(171deg, 66%, 44%);
+}
+.header-buttons .btn--cyan:hover, .clipboard-buttons .btn--cyan:hover {
+  background-color: hsla(171deg, 66%, 44%, 0.75);
+}
+.header-buttons .btn--ligh-blue, .clipboard-buttons .btn--ligh-blue {
+  background-color: hsl(233deg, 100%, 69%);
+}
+.header-buttons .btn--ligh-blue:hover, .clipboard-buttons .btn--ligh-blue:hover {
+  background-color: hsla(233deg, 100%, 69%, 0.75);
+}
+
+section > div {
+  margin: 7rem 0rem;
+}
+section .article-just-text {
+  width: 100%;
+  margin: 0 auto;
+}
+section .article-2 {
+  position: relative;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 4rem;
+}
+section .article-2 .text {
+  max-width: 480px;
+  justify-content: space-between;
+  text-align: start;
+}
+section .article-2 .text > div {
+  margin: 2rem 0rem;
+}
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+}
+footer .footer-grid .flex-card {
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+footer .footer-grid .flex-card p {
+  width: 300px;
+  line-height: 1.5;
+}
+footer .spon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 10rem;
+  padding: 0 3rem;
+}
+footer .spon img {
+  width: 150px;
+  margin-bottom: 3rem;
+}
+footer .contact {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(247, 236, 236);
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem 3rem;
+}
+footer .contact .logo {
+  justify-self: flex-start;
+  width: 30%;
+}
+footer .contact .logo img {
+  width: 50%;
+  height: 50%;
+}
+footer .contact .xx {
+  display: grid;
+  width: 500px;
+  justify-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: flex-start;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+footer .contact .xx p:hover {
+  color: hsl(171deg, 66%, 44%);
+}
+footer .contact .social-media-icon > * {
+  padding: 0.7rem;
+}
+footer .contact .social-media-icon a:hover path {
+  fill: hsl(171deg, 66%, 44%);
+}
+
+@media screen and (max-width: 500px) {
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .article-2__img {
+    padding: 0 1rem;
+  }
+  .article-2 .text > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-grid {
+    justify-content: center;
+  }
+
+  footer .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+  }
+  footer .contact .logo {
+    justify-self: center;
+    align-self: center;
+    padding-left: 50px;
+  }
+  footer .contact .xx {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
