@@ -1,0 +1,249 @@
+@use 'base' as b;
+@use 'unitilies' as u;
+
+
+%flex--column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+
+%flex--row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grayish-blue{
+    color: u.$grayish-blue;
+    margin-top: 1rem;
+}
+
+.clipboard{
+    background: none;
+}
+
+.clipboard{
+    &::after{
+        display: none;
+    }
+    margin:5rem 0;
+
+}
+
+
+.header, .clipboard{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    p{
+        width: 70%;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../assest/images/bg-header-desktop.png') no-repeat center center/cover;
+        z-index: -1;
+    }
+
+    > *{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    &-buttons{
+        display: flex;
+        gap: 20px;  
+        padding-bottom: 100px; 
+        
+
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px inse;
+            border-radius: 20px;
+            color: rgb(251, 251, 251);
+            padding: 10px 25px;
+
+            &--cyan {
+                background-color: u.$strong-cyan; 
+
+                &:hover{
+                background-color: hsl(171, 66%, 44%,0.75);
+            }
+
+                
+            }
+            
+            &--ligh-blue{
+                background-color: u.$light-blue;
+
+                &:hover{
+                    background-color: hsl(233, 100%, 69%,0.75);
+                }
+
+            
+            }
+        }
+    }
+}
+
+section{
+
+    > div {
+        margin: 7rem 0rem;
+    }
+
+    .article-just-text{
+        width: 100%;
+        margin: 0 auto;
+        @extend %flex--column;
+
+        
+    }
+
+    .article-2{
+        @extend %flex--row;
+        position: relative;
+        justify-content: start;
+        align-items: flex-start;
+        gap: 4rem;
+        
+        .text{
+            width: 480px;
+            @extend %flex--column;
+            justify-content: space-between;
+            text-align: start;
+            
+            > div{
+                margin: 2rem 0rem;
+                
+            }
+            
+
+        }
+    }
+
+    .article-center-img{
+        @extend %flex--column
+
+
+    }
+}
+
+
+footer{
+
+    .footer-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
+        gap: 2rem;
+
+        .flex-card{
+            @extend %flex--column;
+            gap:0.5rem;
+            justify-content: space-between;
+
+            p{
+                width: 300px;
+                line-height: 1.5;
+            }
+            
+        }
+    }
+
+    .spon{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 10rem;
+        padding: 0 3rem;
+
+        img{
+            width: 150px;
+        }
+
+        @for $i from 1 through 5{
+            :nth-child(#{$i}){
+                grid-column: $i;
+            }
+        } 
+
+     
+    }
+
+   .contact{
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(247, 236, 236);
+    
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem 3rem;
+
+    .logo{
+        justify-self: flex-start;
+        width: 30%;
+
+        img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+    .xx{
+        display: grid;
+        width: 500px;
+        justify-items: flex-start;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-self:flex-start ;
+        gap: 5px;
+        cursor:pointer;
+        font-size: 16px;
+
+        p:hover{
+            color: u.$strong-cyan
+          
+
+        }
+        
+    }
+
+    .social-media-icon{
+
+        @extend %flex--row;
+        
+        > *{
+            padding: 0.7rem;
+        }
+
+        a:hover{
+
+            path{
+                fill: u.$strong-cyan;
+            }
+        }
+    }
+
+}
+
+}
+
+
